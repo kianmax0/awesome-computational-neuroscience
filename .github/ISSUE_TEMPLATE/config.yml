@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Contribution guidance
+    url: https://github.com/kianmax0/awesome-computational-neuroscience/blob/main/CONTRIBUTING.md
+    about: Read the resource curation and pull request guidelines.

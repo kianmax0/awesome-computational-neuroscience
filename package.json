@@ -1,0 +1,10 @@
+{
+  "name": "awesome-computational-neuroscience",
+  "private": true,
+  "scripts": {
+    "lint:md": "markdownlint-cli2 '**/*.md' '#node_modules'"
+  },
+  "devDependencies": {
+    "markdownlint-cli2": "0.23.3"
+  }
+}

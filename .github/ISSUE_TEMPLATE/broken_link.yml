@@ -1,0 +1,28 @@
+name: Report a broken link
+description: Report a resource link that appears unavailable or incorrect.
+title: "[Broken link]: "
+labels:
+  - broken link
+body:
+  - type: input
+    id: resource
+    attributes:
+      label: Resource name
+      placeholder: Name as it appears in the list
+    validations:
+      required: true
+  - type: input
+    id: url
+    attributes:
+      label: Link in the list
+      placeholder: https://example.org
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: What happens?
+      description: Include the replacement URL if you found one. Mention whether you confirmed the problem in a browser.
+      render: text
+    validations:
+      required: true

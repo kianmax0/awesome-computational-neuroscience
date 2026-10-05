@@ -1,0 +1,17 @@
+# Keep failures visible and use modest concurrency to reduce rate limits.
+timeout = 30
+max_retries = 2
+max_concurrency = 8
+host_concurrency = 3
+exclude_path = ['(^|/)node_modules/', '(^|/)lychee/']
+
+# Manually verified from publisher pages on 2026-10-05. Both valid book
+# records return 403 to automated clients; recheck them during weekly review.
+# Fundamentals (third edition): the accessible author companion is for the
+# older second edition, so retain the canonical publisher record here.
+# Reinforcement Learning (second edition): the author-hosted book site was
+# unavailable during initial review, so retain the publisher record here.
+exclude = [
+  '^https://academic\.oup\.com/book/45368$',
+  '^https://mitpress\.mit\.edu/9780262039246/reinforcement-learning/$',
+]

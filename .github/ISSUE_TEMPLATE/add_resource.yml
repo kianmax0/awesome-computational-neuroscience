@@ -1,0 +1,56 @@
+name: Suggest a resource
+description: Suggest a resource for the computational neuroscience collection.
+title: "[Resource]: "
+labels:
+  - resource suggestion
+body:
+  - type: markdown
+    attributes:
+      value: Please check the list for duplicates and review the contribution guidance before submitting.
+  - type: input
+    id: name
+    attributes:
+      label: Resource name
+      placeholder: Name of the tool, course, book, dataset, or other resource
+    validations:
+      required: true
+  - type: input
+    id: url
+    attributes:
+      label: Official URL
+      description: Prefer the official project or resource page.
+      placeholder: https://example.org
+    validations:
+      required: true
+  - type: dropdown
+    id: category
+    attributes:
+      label: Suggested section
+      options:
+        - Books
+        - Courses and tutorials
+        - Mathematical foundations
+        - Foundational papers
+        - Neuron and network simulators
+        - Neural data analysis
+        - Open datasets
+        - Data standards and reproducibility
+        - NeuroAI and spiking neural networks
+        - Community and conferences
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Short description
+      description: What does it offer, and how is it useful for computational neuroscience?
+    validations:
+      required: true
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before submitting
+      options:
+        - label: I checked the list for duplicates and confirmed that this resource is relevant.
+          required: true
