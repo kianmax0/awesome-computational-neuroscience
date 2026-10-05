@@ -5,7 +5,7 @@ max_concurrency = 8
 host_concurrency = 3
 exclude_path = ['(^|/)node_modules/', '(^|/)lychee/']
 
-# Manually verified from publisher pages on 2026-10-05. Both valid book
+# Content verified from publisher pages on 2026-10-05. These valid book
 # records return 403 to automated clients; recheck them during weekly review.
 # Fundamentals (third edition): the accessible author companion is for the
 # older second edition, so retain the canonical publisher record here.
