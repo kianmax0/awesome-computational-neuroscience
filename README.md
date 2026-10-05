@@ -2,7 +2,7 @@
 
 > Mathematical models, neural computation, and reproducible analysis of brain activity.
 
-计算神经科学资源合集 · A curated guide to computational neuroscience, from single neurons and circuits to learning, cognition, and neural data. English descriptions link to official documentation, author pages, and original publications wherever possible.
+A curated guide to computational neuroscience, from single neurons and circuits to learning, cognition, and neural data. English descriptions link to official documentation, author pages, and original publications wherever possible.
 
 ## Contents
 
