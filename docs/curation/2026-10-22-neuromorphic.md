@@ -1,0 +1,26 @@
+# Neuromorphic computing resource review (2026-10-22)
+
+This pass fills a topic-guide gap with official engineering documentation, software interfaces, and one event-data release. Selection favors resources that show how to build, map, or evaluate a concrete system. Documentation being public does not imply access to the corresponding device.
+
+## Accepted candidates
+
+| Resource | Decision | Evidence and scope |
+| --- | --- | --- |
+| [Lava Software Framework](https://lava-nc.org/) | Accept | The official documentation describes an open Python framework with process models, CPU execution, and hardware-oriented abstractions; its walk-through builds a LIF network on CPU. The documentation also describes Loihi backends, while roadmap and architecture pages note evolving support. The guide therefore directs readers to it for process concepts and requires them to check current backend support before claiming deployment. |
+| [Sinabs](https://sinabs.readthedocs.io/) | Accept | Maintainer documentation identifies Sinabs as a PyTorch-based SNN library and documents conversion, discretization, and deployment via `sinabs-dynapcnn` to named SPECK/DYNAP-CNN kits. The hardware instructions require a compatible development kit; the software and simulator route can be explored separately. No performance or energy claim is carried over. |
+| [BrainScaleS-2 User Documentation](https://electronicvisions.github.io/documentation-brainscales2/latest/) | Accept | The official documentation includes demos, examples, and API references for PyNN, hxtorch, and system components, with examples for neuron experiments, learning, matrix multiplication, and on-chip plasticity. The docs are public; physical system access is not represented here as generally available, so confirm allocation and account requirements with the platform. |
+| [SpiNNaker software and sPyNNaker documentation](https://spinnakermanchester.github.io/) | Accept | The University of Manchester project documentation points to the current software release, PyNN front end, Jupyter and EBRAINS workflows, and local-machine installation instructions. The install guide distinguishes a local board from an accessed machine, so users should verify actual machine access before planning physical runs. This is specifically the SpiNNaker platform interface, not the unrelated Spinnaker continuous-delivery project. |
+| [IBM DVS Gesture dataset](https://research.ibm.com/interactive/dvsgesture/) | Accept with access caveat | IBM's original research page identifies DVS Gesture as an event dataset of 11 hand-gesture categories, collected from 29 subjects under three illumination conditions, and links a dataset download. The linked IBM download timed out in this review, so direct raw-data access remains unverified. As a derivative companion, [Zenodo's preprocessed release](https://zenodo.org/records/8060604) provides train/test NPY archives totaling about 3.1 GB; its tensors must not be treated as the original raw event stream or as preserving timing/polarity unless that representation is independently confirmed. |
+
+## Rejected or deferred
+
+| Candidate | Decision | Reason |
+| --- | --- | --- |
+| SpiNNaker 2 hardware as an independent resource | Defer | The reviewed current general software landing page documents the SpiNNaker platform and sPyNNaker paths, while separate SpiNNaker 2 hardware access and software support conditions were not sufficiently clear from the official material checked in this pass. Avoid implying a drop-in public hardware service. |
+| DVS Gesture through a second loader or framework | Defer | The repository already lists Tonic as event-data tooling. The dataset is accepted once at its original IBM source, with the Zenodo derivative described only as an alternate preprocessed access route; additional loader examples would repeat implementation-specific access to the same benchmark. |
+| Broad neuromorphic hardware review paper | Defer | The main gap in this repository was a practical guide to software, mapping, access, and measurement. The selected official docs provide those entry points directly; a review can be added in a future paper-focused pass if a clear current, high-value synthesis is identified. |
+| Unverified energy-efficiency claims | Reject | Vendor or framework descriptions may state efficiency goals, but no unqualified comparison is included without device measurements, baselines, and clearly defined timing and power boundaries. |
+
+## Verification notes
+
+Checked official Lava documentation pages for framework scope, architecture, and CPU walk-through; Sinabs documentation for current overview and kit deployment steps; BrainScaleS-2 project documentation for demos and API families; SpiNNaker Manchester project and installation documentation for release and access distinctions; IBM's original publication page for dataset provenance and metadata; its linked dataset URL timed out; and the Zenodo derivative record for files, size, and preprocessed representation. Access pages and version details can change; consult the linked official sources before committing to a hardware run. Biological simulation time, wall-clock processing time, software simulation, and physical-device measurements are separate quantities throughout this guide.

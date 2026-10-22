@@ -25,19 +25,17 @@ body:
   - type: dropdown
     id: category
     attributes:
-      label: Suggested section
+      label: Suggested catalog page
+      description: Choose the resource type, then name relevant topic, learning, or method guides in your description.
       options:
         - Books
-        - Courses and tutorials
-        - Mathematical foundations
-        - Foundational papers
-        - Research topics
-        - Neuron and network simulators
-        - Neural data analysis
-        - Open datasets
-        - Data standards and reproducibility
-        - NeuroAI and spiking neural networks
-        - Community and conferences
+        - Courses and lectures
+        - Tutorials and examples
+        - Papers and reviews
+        - Software
+        - Datasets and benchmarks
+        - Standards
+        - Community
         - Other
     validations:
       required: true
@@ -45,7 +43,22 @@ body:
     id: description
     attributes:
       label: Short description
-      description: What does it offer, and how is it useful for computational neuroscience?
+      description: What does it offer, who can use it (background or experience), and what can they learn or do? Name the catalog section and any guides that should link to the entry.
+    validations:
+      required: true
+  - type: textarea
+    id: access
+    attributes:
+      label: Access and prerequisites
+      description: Can readers use the resource for free? Note accounts, agreements, paid access, required software, or substantial hardware requirements where relevant.
+      placeholder: Free online materials; running the examples requires Python.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: What did you verify?
+      description: Link to official documentation or a sample lesson, give the date checked, and distinguish reading the page from running code or downloading data.
     validations:
       required: true
   - type: checkboxes
